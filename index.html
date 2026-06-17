@@ -563,6 +563,362 @@
         color: var(--primary);
       }
 
+      /* ===== Favorites Compare Mode ===== */
+      .fav-toolbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 16px;
+      }
+
+      .fav-toolbar .results-info {
+        margin-bottom: 0;
+      }
+
+      .fav-actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .compare-entry-btn,
+      .compare-selectall-btn,
+      .compare-start-btn,
+      .compare-cancel-btn {
+        padding: 8px 18px;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+        border: 2px solid;
+      }
+
+      .compare-entry-btn {
+        background: var(--primary);
+        border-color: var(--primary);
+        color: white;
+      }
+
+      .compare-entry-btn:hover:not(:disabled) {
+        background: var(--primary-dark);
+        border-color: var(--primary-dark);
+      }
+
+      .compare-entry-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      .compare-selectall-btn {
+        background: white;
+        border-color: var(--border);
+        color: var(--text-light);
+      }
+
+      .compare-selectall-btn:hover {
+        border-color: var(--primary-light);
+        color: var(--primary);
+      }
+
+      .compare-start-btn {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: white;
+      }
+
+      .compare-start-btn:hover:not(:disabled) {
+        background: #e67e22;
+        border-color: #e67e22;
+      }
+
+      .compare-start-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      .compare-cancel-btn {
+        background: white;
+        border-color: var(--text-muted);
+        color: var(--text-light);
+      }
+
+      .compare-cancel-btn:hover {
+        border-color: var(--text);
+        color: var(--text);
+      }
+
+      .compare-selected-info {
+        font-size: 14px;
+        color: var(--text-light);
+      }
+
+      .cocktail-card.card-selected {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.18), var(--shadow-hover);
+      }
+
+      .card-checkbox {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        border: 2px solid var(--border);
+        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        color: white;
+        font-weight: 700;
+        z-index: 2;
+        transition: var(--transition);
+      }
+
+      .card-checkbox.checked {
+        background: var(--primary);
+        border-color: var(--primary);
+      }
+
+      .cocktail-card {
+        position: relative;
+      }
+
+      /* ===== Compare Page ===== */
+      .compare-page {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 20px 20px 60px;
+        width: 100%;
+      }
+
+      .compare-header {
+        text-align: center;
+        margin-bottom: 16px;
+      }
+
+      .compare-title {
+        font-size: 26px;
+        font-weight: 800;
+        color: var(--text);
+      }
+
+      .compare-subtitle {
+        font-size: 14px;
+        color: var(--text-muted);
+        margin-top: 4px;
+      }
+
+      .compare-legend {
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+        margin-bottom: 20px;
+      }
+
+      .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 13px;
+        color: var(--text-light);
+      }
+
+      .legend-dot {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        display: inline-block;
+      }
+
+      .legend-common {
+        background: #d5f5e3;
+        border: 2px solid #27ae60;
+      }
+
+      .legend-unique {
+        background: #fdebd0;
+        border: 2px solid #e67e22;
+      }
+
+      .compare-section {
+        background: var(--bg-card);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+        margin-bottom: 16px;
+      }
+
+      .compare-row {
+        display: grid;
+        grid-template-columns: 140px repeat(var(--compare-cols, 2), 1fr);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .compare-row:last-child {
+        border-bottom: none;
+      }
+
+      .compare-sticky-header {
+        position: sticky;
+        top: 78px;
+        background: var(--bg-card);
+        z-index: 10;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      }
+
+      .compare-label-col {
+        padding: 14px 16px;
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--text-light);
+        background: #faf6f0;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .compare-col {
+        padding: 14px 16px;
+        font-size: 14px;
+        color: var(--text);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-left: 1px solid var(--border);
+        text-align: center;
+      }
+
+      .compare-col-header {
+        padding: 0;
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .compare-color-strip {
+        height: 6px;
+        width: 100%;
+      }
+
+      .compare-col-title {
+        padding: 12px 16px;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .compare-col-title:hover {
+        background: #faf6f0;
+      }
+
+      .compare-name {
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--text);
+      }
+
+      .compare-name-en {
+        font-size: 12px;
+        color: var(--text-muted);
+        margin-top: 2px;
+      }
+
+      .compare-stat {
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--primary);
+      }
+
+      .compare-empty {
+        color: var(--text-muted);
+        font-size: 16px;
+      }
+
+      .compare-section-title-row {
+        background: linear-gradient(135deg, #fdf6ee 0%, #f5ebe0 100%);
+      }
+
+      .compare-section-title {
+        padding: 14px 20px;
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--text);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        grid-column: 1 / -1;
+      }
+
+      .compare-section-title .icon {
+        font-size: 18px;
+      }
+
+      .compare-ingredient-row.row-common {
+        background: #f4fbf6;
+      }
+
+      .compare-ingredient-row.row-unique {
+        background: #fffaf0;
+      }
+
+      .compare-ingredient-name {
+        font-weight: 600;
+        color: var(--text);
+      }
+
+      .ingredient-badge {
+        display: inline-flex;
+        align-items: center;
+        padding: 2px 8px;
+        border-radius: 10px;
+        font-size: 11px;
+        font-weight: 600;
+      }
+
+      .badge-common {
+        background: #d5f5e3;
+        color: #1e8449;
+        border: 1px solid #82e0aa;
+      }
+
+      .badge-unique {
+        background: #fdebd0;
+        color: #a04000;
+        border: 1px solid #f5b041;
+      }
+
+      .compare-amount {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--primary);
+      }
+
+      .compare-step-number {
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--primary);
+      }
+
+      .compare-step-text {
+        font-size: 13px;
+        line-height: 1.6;
+        text-align: left;
+        padding: 0 4px;
+      }
+
+      .compare-tip-box {
+        font-size: 12px;
+        line-height: 1.7;
+        padding: 10px 12px;
+        text-align: left;
+        width: 100%;
+      }
+
       /* ===== Responsive ===== */
       @media (max-width: 600px) {
         .logo {
@@ -588,6 +944,68 @@
 
         .search-bar {
           flex-direction: column;
+        }
+
+        .fav-toolbar {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .fav-actions {
+          width: 100%;
+        }
+
+        .compare-entry-btn,
+        .compare-selectall-btn,
+        .compare-start-btn,
+        .compare-cancel-btn {
+          padding: 6px 12px;
+          font-size: 13px;
+        }
+
+        .compare-page {
+          padding: 12px 8px 40px;
+        }
+
+        .compare-row {
+          grid-template-columns: 90px repeat(var(--compare-cols, 2), 1fr);
+        }
+
+        .compare-label-col {
+          padding: 10px 8px;
+          font-size: 12px;
+        }
+
+        .compare-col {
+          padding: 10px 8px;
+          font-size: 12px;
+        }
+
+        .compare-name {
+          font-size: 13px;
+        }
+
+        .compare-name-en {
+          font-size: 10px;
+        }
+
+        .compare-step-text,
+        .compare-tip-box {
+          font-size: 11px;
+        }
+
+        .compare-legend {
+          flex-wrap: wrap;
+          gap: 12px;
+        }
+
+        .compare-sticky-header {
+          top: 68px;
+        }
+
+        .ingredient-badge {
+          font-size: 10px;
+          padding: 1px 6px;
         }
       }
     </style>

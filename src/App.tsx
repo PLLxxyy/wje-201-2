@@ -2,8 +2,13 @@ import { useState, useEffect, useCallback } from 'react';
 import { HomePage } from './pages/HomePage';
 import { DetailPage } from './pages/DetailPage';
 import { FavoritesPage } from './pages/FavoritesPage';
+import { ComparePage } from './pages/ComparePage';
 
-type Page = { type: 'home' } | { type: 'detail'; id: string } | { type: 'favorites' };
+type Page =
+  | { type: 'home' }
+  | { type: 'detail'; id: string }
+  | { type: 'favorites' }
+  | { type: 'compare'; ids: string[] };
 
 const FAVORITES_KEY = 'cocktail-favorites';
 
@@ -93,6 +98,15 @@ export default function App() {
           toggleFavorite={toggleFavorite}
           openDetail={(id) => navigate({ type: 'detail', id })}
           goHome={() => navigate({ type: 'home' })}
+          openCompare={(ids) => navigate({ type: 'compare', ids })}
+        />
+      )}
+
+      {page.type === 'compare' && (
+        <ComparePage
+          ids={page.ids}
+          goBack={() => navigate({ type: 'favorites' })}
+          openDetail={(id) => navigate({ type: 'detail', id })}
         />
       )}
     </>
